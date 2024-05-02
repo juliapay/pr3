@@ -14,19 +14,23 @@ public class Uebung05 {
 //    Question: What does mkdir() return?
     public static void main(String[] args) {
         String directory = new String("C:\\campus02\\test\\demo4");
-
-        System.out.println(createDirectory(directory));
+        createDirectory(directory);
     }
 
-    public static boolean createDirectory(String directory) {
+    public static void createDirectory(String directory) {
 
         File dir = new File(directory);
-        dir.mkdirs();
-        if (!dir.exists()) {
-            return false;
-        }
-        System.out.println(dir.getPath() + ": True");
-        return true;
+
+        //shortform!!!
+
+        System.out.println("Directory " + dir.getPath() +" : "+dir.mkdirs());
+        //longform!!
+//        if (dir.mkdirs()) {
+//            System.out.println("Directory " + dir.getPath() + ": True");
+//        }else{
+//            System.out.println("Directory C:\\campus02\\test\\demo4 created?: false");
+//        }
+
     }
 
 

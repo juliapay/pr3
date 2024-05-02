@@ -2,7 +2,7 @@ package at.campus02.pr3.fileio.ue3;
 
 import java.io.File;
 
-public class Uebung2 {
+public class Uebung02 {
     public static void main(String[] args) {
         // Provide full path for directory(change
         // accordingly)
