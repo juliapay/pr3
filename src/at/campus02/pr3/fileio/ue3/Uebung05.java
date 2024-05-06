@@ -13,7 +13,8 @@ public class Uebung05 {
 //    Question: What does mkdirs() return?
 //    Question: What does mkdir() return?
     public static void main(String[] args) {
-        String directory = new String("C:\\campus02\\test\\demo4");
+        File dir = new File("C:\\campus02\\test");
+        String directory = new String("C:\\campus02\\test");
         createDirectory(directory);
     }
 
