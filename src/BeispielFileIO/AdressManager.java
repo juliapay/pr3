@@ -39,7 +39,8 @@ public class AdressManager {
             // Erstellt einen ObjectOutputStream, der mit dem FileOutputStream verbunden ist
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
             for (Address a : addresses) {
-                objectOutputStream.writeObject(a);
+                objectOutputStream.writeObject(a.getFirstname()+seperator+a.getLastname()+seperator+a.getMobilNumber()+seperator+a.getEmail());
+
             }
 
             // hier benötigt weil dannach sofort ausgeschrieben wird
