@@ -1,4 +1,4 @@
-package at.campus02.pr3.FILEIO.Uebung11;
+package at.campus02.pr3.FILEIO.ObjekteInDateiSpeichernUndLesen;
 
 import java.io.IOException;
 

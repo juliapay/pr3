@@ -1,8 +1,8 @@
-package at.campus02.pr3.FILEIO;
+package at.campus02.pr3.FILES;
 
 import java.io.File;
 
-public class Uebung05 {
+public class DirectoriesErstellenMitCheckObDirOderFile {
     //    Tip: use mkdirs()
 //    Write a method, which creates multiple directories. Example: "C:\\campus02\\test\\demo4" (Campus, Test, Demo4 will be created)
 //            - It should also be checked, if the given directory has been created -> print it to the console:

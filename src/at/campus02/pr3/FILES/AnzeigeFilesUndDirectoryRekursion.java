@@ -1,6 +1,6 @@
-package at.campus02.pr3.FILEIO;
+package at.campus02.pr3.FILES;
 import java.io.File;
-public class Uebung03 {
+public class AnzeigeFilesUndDirectoryRekursion {
     public static void main(String[] args) {
         File dir = new File("C:\\Users\\Work\\Desktop\\PR3-21\\01 - File IO");
         System.out.println("Original Path: " + dir.getAbsolutePath());

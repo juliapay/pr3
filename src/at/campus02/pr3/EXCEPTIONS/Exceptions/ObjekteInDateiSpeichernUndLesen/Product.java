@@ -1,4 +1,4 @@
-package at.campus02.pr3.EXCEPTIONS.Exceptions.Exceptions02;
+package at.campus02.pr3.EXCEPTIONS.Exceptions.ObjekteInDateiSpeichernUndLesen;
 
 public class Product {
     protected String productName;

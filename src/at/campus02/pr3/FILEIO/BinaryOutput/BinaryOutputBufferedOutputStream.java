@@ -1,11 +1,11 @@
-package at.campus02.pr3.FILEIO.Uebung14;
+package at.campus02.pr3.FILEIO.BinaryOutput;
 
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-public class Uebung14c {
+public class BinaryOutputBufferedOutputStream {
     public static void main(String[] args) throws IOException {
 
 

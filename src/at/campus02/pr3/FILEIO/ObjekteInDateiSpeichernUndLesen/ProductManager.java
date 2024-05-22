@@ -1,4 +1,4 @@
-package at.campus02.pr3.FILEIO.Uebung11;
+package at.campus02.pr3.FILEIO.ObjekteInDateiSpeichernUndLesen;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -19,35 +19,26 @@ public class ProductManager {
 
     public void saveToFile(String path) throws IOException {
 
-        // Erstellt einen FileWriter
-        FileWriter fileWriter = new FileWriter(path);
-        // Erstellt einen PrintWriter, der mit dem FileWriter verbunden ist
-        PrintWriter printWriter = new PrintWriter(fileWriter);
+        PrintWriter printWriter = new PrintWriter( new FileWriter(path));
         BufferedWriter bufferedWriter = new BufferedWriter(printWriter);
 
         for (Product p : productList) {
             bufferedWriter.write(p.toString());
             bufferedWriter.newLine();
         }
-
         bufferedWriter.flush();
-        // Schließt den PrintWriter, um die Datei zu schließen
         bufferedWriter.close();
     }
 
     public void readFromFile(String path) throws IOException {
 
-        // Erstellt ein FileReader-Objekt, um den Inhalt der Datei zu lesen
-        FileReader fileReader = new FileReader(path);
-        // Erstellt ein BufferedReader-Objekt, um den Inhalt der Datei Zeile für Zeile zu lesen
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-        // Liest den Inhalt der Datei Zeile für Zeile und gibt ihn in der Konsole aus
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+
         String line;
         while ((line = bufferedReader.readLine()) != null) {
             System.out.println(line);
         }
-
-        // Schließt das BufferedReader-Objekt, um Ressourcen freizugeben
+        System.out.println("Product Information successfully read.");
         bufferedReader.close();
 
     }

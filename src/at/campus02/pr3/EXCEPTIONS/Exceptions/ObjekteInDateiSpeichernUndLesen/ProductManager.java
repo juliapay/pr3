@@ -1,4 +1,4 @@
-package at.campus02.pr3.EXCEPTIONS.Exceptions.Exceptions02;
+package at.campus02.pr3.EXCEPTIONS.Exceptions.ObjekteInDateiSpeichernUndLesen;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -21,9 +21,7 @@ public class ProductManager {
 
         BufferedWriter bufferedWriter = null;
         try {
-            // Erstellt einen FileWriter, um den Pfad der Datei zu schreiben
             FileWriter fileWriter = new FileWriter(path);
-            // Erstellt einen PrintWriter, der mit dem FileWriter verbunden ist
             PrintWriter printWriter = new PrintWriter(fileWriter);
             bufferedWriter = new BufferedWriter(printWriter);
 
@@ -39,13 +37,11 @@ public class ProductManager {
             e.printStackTrace();
         } finally {
             try {
-                // Spült den Inhalt des BufferedWriters in die Datei
                 bufferedWriter.flush();
-                // Schließt den PrintWriter, um die Datei zu schließen
                 bufferedWriter.close();
                 System.out.println("Datei " + path + " erfolgreich geschrieben");
             } catch (IOException e) {
-                // Wird ausgeführt, wenn eine IOException beim Schließen des BufferedWriters auftritt
+
                 System.out.println("Datei nicht gefunden");
                 e.printStackTrace();
             }

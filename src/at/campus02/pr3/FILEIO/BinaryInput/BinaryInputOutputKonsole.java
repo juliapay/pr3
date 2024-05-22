@@ -1,8 +1,8 @@
-package at.campus02.pr3.FILEIO;
+package at.campus02.pr3.FILEIO.BinaryInput;
 
 import java.io.*;
 
-public class Uebung12 {
+public class BinaryInputOutputKonsole {
 
     public static void main(String[] args) throws IOException {
 
@@ -23,6 +23,7 @@ public class Uebung12 {
         //ausgegeben wird 1 Byte auf einmal = 8 Bit = 1 char
         // -1 ist end of file
         while ((byteRead = bufferedInputStream.read()) != -1) {
+            //-1 ist ende des streams!!
             // Gib das Byte auf der Konsole aus
             System.out.print(i+": ");
             System.out.print(byteRead);

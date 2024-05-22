@@ -1,9 +1,9 @@
-package at.campus02.pr3.FILEIO.Uebung14;
+package at.campus02.pr3.FILEIO.BinaryOutput;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class Uebung14b {
+public class BinaryOutputFileOutputStream {
     public static void main(String[] args) throws IOException {
        // File file = new File("C:\\campus02\\test\\testBinary2.txt");
 

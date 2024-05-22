@@ -1,6 +1,6 @@
-package at.campus02.pr3.FILEIO;
+package at.campus02.pr3.FILES;
 import java.io.File;
-public class Uebung04 {
+public class FileMitAttributenUndSpeicherplatzInKonsole {
 
     public static void main(String[] args) {
         /*

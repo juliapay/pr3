@@ -1,8 +1,8 @@
-package at.campus02.pr3.FILEIO;
+package at.campus02.pr3.FILES;
 
 import java.io.File;
 
-public class Uebung02 {
+public class AnzeigeFilesUndDirectory {
     public static void main(String[] args) {
         // Provide full path for directory(change
         // accordingly)
@@ -39,7 +39,6 @@ public class Uebung02 {
 
     private static int listFilesAndDirectories(File directory, int sum) {
         File[] files = directory.listFiles();
-
 
         if (files != null) {
             for (File file : directory.listFiles()) {

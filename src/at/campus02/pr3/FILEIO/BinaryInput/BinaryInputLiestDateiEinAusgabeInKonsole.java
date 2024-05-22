@@ -1,10 +1,10 @@
-package at.campus02.pr3.FILEIO;
+package at.campus02.pr3.FILEIO.BinaryInput;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class Uebung13 {
+public class BinaryInputLiestDateiEinAusgabeInKonsole {
     public static void main(String[] args) throws IOException {
         // Pfad der Datei
         String filePath = "C:\\campus02\\test\\test.txt";
