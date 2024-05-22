@@ -1,4 +1,4 @@
-package at.campus02.pr3.FILEIO.Exceptions.Exceptions02;
+package at.campus02.pr3.EXCEPTIONS.Exceptions.Exceptions02;
 
 public class Main {
     public static void main(String[] args) {

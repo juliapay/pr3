@@ -1,30 +1,11 @@
-package at.campus02.pr3.FILEIO.Exceptions.Exceptions06;
+package at.campus02.pr3.EXCEPTIONS.Exceptions.Exceptions06;
 
 import java.io.*;
-import java.util.Arrays;
 
-public class Exception06MoreComplex {
-    public static class myClass implements Serializable{
-        int a = 5;
-        byte[] c = {'e', 'x', 'a', 'm', 'p', 'l', 'e'};
-        double d=7.22;
-        String b="Hallo ich bin ein String in der Klasse";
-
-        @Override
-        public String toString() {
-            return "myClass{" +
-                    "a=" + a +
-                    ", c=" + Arrays.toString(c) +
-                    ", d=" + d +
-                    ", b='" + b + '\'' +
-                    '}';
-        }
-    }
-
+public class Exceptions06 {
     public static void main(String[] args) {
 
-        //String message = "Hallo Welt";
-        myClass myObject=new myClass();
+        String message = "Hallo Welt";
         ObjectOutputStream objectOutputStream = null;
         ObjectInputStream objectInputStream = null;
 
@@ -36,7 +17,7 @@ public class Exception06MoreComplex {
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
             // Serialisiert das String-Objekt "message" in die Datei
-            objectOutputStream.writeObject(myObject);
+            objectOutputStream.writeObject(message);
             // hier benötigt weil dannach sofort ausgeschrieben wird
             objectOutputStream.flush();
             // Erstellt einen FileInputStream für die Datei "object.dat"
@@ -46,10 +27,10 @@ public class Exception06MoreComplex {
             objectInputStream = new ObjectInputStream(fileInputStream);
 
             // Deserialisiert das String-Objekt aus der Datei und castet es zu einem String
-            myClass eingeleseneKlasse = (myClass) objectInputStream.readObject();
+            String readMessage = (String) objectInputStream.readObject();
 
             // Gibt das deserialisierte String-Objekt auf der Konsole aus
-            System.out.println("Objekt: " + eingeleseneKlasse);
+            System.out.println("Objekt: " + readMessage);
 
         } catch (IOException e) {
             // Wird geworfen, wenn eine IOException auftritt
