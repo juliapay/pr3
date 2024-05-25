@@ -1,4 +1,4 @@
-package at.campus02.pr3.EXCEPTIONS.Exceptions.ObjekteInDateiSpeichernUndLesen;
+package at.campus02.pr3.EXCEPTIONS.ObjekteInDateiSpeichernUndLesen;
 
 public class Main {
     public static void main(String[] args) {

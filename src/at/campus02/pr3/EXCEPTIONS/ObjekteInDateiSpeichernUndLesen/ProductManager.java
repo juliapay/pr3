@@ -1,4 +1,4 @@
-package at.campus02.pr3.EXCEPTIONS.Exceptions.ObjekteInDateiSpeichernUndLesen;
+package at.campus02.pr3.EXCEPTIONS.ObjekteInDateiSpeichernUndLesen;
 
 import java.io.*;
 import java.util.ArrayList;

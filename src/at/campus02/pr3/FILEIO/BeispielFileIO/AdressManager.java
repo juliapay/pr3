@@ -1,6 +1,6 @@
 package at.campus02.pr3.FILEIO.BeispielFileIO;
 
-import at.campus02.pr3.EXCEPTIONS.Exceptions.Exceptions06.Exception06MoreComplex;
+import at.campus02.pr3.EXCEPTIONS.Exceptions06.Exception06MoreComplex;
 
 import java.io.*;
 import java.util.ArrayList;

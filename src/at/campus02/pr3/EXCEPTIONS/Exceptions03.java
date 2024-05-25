@@ -1,4 +1,4 @@
-package at.campus02.pr3.EXCEPTIONS.Exceptions;
+package at.campus02.pr3.EXCEPTIONS;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;

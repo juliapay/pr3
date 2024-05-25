@@ -1,4 +1,4 @@
-package at.campus02.pr3.EXCEPTIONS.Exceptions.Exceptions06;
+package at.campus02.pr3.EXCEPTIONS.Exceptions06;
 
 import java.io.*;
 
