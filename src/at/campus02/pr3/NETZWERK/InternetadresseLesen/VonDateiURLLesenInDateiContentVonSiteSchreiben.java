@@ -3,8 +3,10 @@ package at.campus02.pr3.NETZWERK.InternetadresseLesen;
 import java.io.*;
 import java.net.URL;
 
-public class Main {
+public class VonDateiURLLesenInDateiContentVonSiteSchreiben {
     public static void main(String[] args) throws IOException {
+        //   Erstellen Sie ein Programm, das eine Internetadresse aus einer Textdatei liest, und den Inhalt dieser URL in eine
+        //   Datei “content.html” schreibt.
 
         String filePath = "C:\\Users\\s54828\\Desktop\\url.txt";
         String outputfile = "C:\\Users\\s54828\\Desktop\\content.html";
