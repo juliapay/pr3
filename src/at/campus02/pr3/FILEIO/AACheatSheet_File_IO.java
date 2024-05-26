@@ -8,9 +8,12 @@ import static java.nio.charset.StandardCharsets.ISO_8859_1;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class AACheatSheet_File_IO {
-    public static void main(String[] args) throws IOException {
+    public AACheatSheet_File_IO() throws IOException {
+    }
 
-        //----FILE MIT BUFFEREDREADER EINLESEN AUSGABE IN KONSOLE----
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+
+        //----TEXTDATEI MIT BUFFEREDREADER EINLESEN AUSGABE IN KONSOLE----
         // öffnet die Datei test.txt
         File file = new File("umlaute.txt");
         FileReader fileReader = new FileReader(file);
@@ -41,12 +44,23 @@ public class AACheatSheet_File_IO {
         String dateipfad = "C:\\Users\\Julia\\julia\\workingwoman\\SWENG C&M\\SWENG\\FH CAMPUS 02\\Seminare\\test\\pr3\\src\\at\\campus02\\pr3\\uebung09.txt";
         File file1 = new File(dateipfad);
         FileWriter fileWriter = new FileWriter(dateipfad);
-        fileWriter.write("zeile 1" + System.getProperty(""));
+        fileWriter.write("zeile 1");
         PrintWriter printWriter = new PrintWriter(fileWriter);
         printWriter.println("Hello");
         printWriter.println("zeile 3");
         printWriter.flush();
         printWriter.close();
+        //----  ODER MIT BUFFEREDWRITER
+        FileWriter fileWriter12 = new FileWriter("neue_datei_18mai.txt");
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter12);
+        String data = "Das ist ein test";
+        bufferedWriter.write(data);
+        bufferedWriter.write(data);
+        bufferedWriter.newLine();
+        bufferedWriter.write(data);
+        bufferedWriter.flush();
+        bufferedWriter.close();
+        System.out.println("Fertig");
 
         //----TEXTDATEI ERSTELLEN DURCH KONSOLENINPUT BIS STOP-----
         FileWriter fileWriter1 = new FileWriter("uebung10.txt");
@@ -74,12 +88,12 @@ public class AACheatSheet_File_IO {
 
         //---OUTPUTSTREAMWRITER----
 
-        String data = "example";
+        String data1 = "example";
 
         FileOutputStream file3 = new FileOutputStream("output.txt");
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(file3);
 
-        outputStreamWriter.write(data);
+        outputStreamWriter.write(data1);
         outputStreamWriter.flush();
         outputStreamWriter.close();
         try {
@@ -130,7 +144,7 @@ public class AACheatSheet_File_IO {
             e.getStackTrace();
         }
 
-        //----BINARYINPUT MIT FILEINPUTSTREAM BUFFEREDINPUTSTREAM----
+        //----BINARYINPUT MIT FILEINPUTSTREAM BUFFEREDINPUTSTREAM Ausgabe in Konsole----
         File file6 = new File("test.txt");
 
         FileInputStream fileInputStream = new FileInputStream(file6);
@@ -138,7 +152,7 @@ public class AACheatSheet_File_IO {
         BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
 
         int byteRead;
-        int i=0;
+        int i = 0;
         while ((byteRead = bufferedInputStream.read()) != -1) {
             System.out.print((int) ((char) byteRead));
             System.out.println("\t'" + (char) byteRead + "'");
@@ -164,14 +178,14 @@ public class AACheatSheet_File_IO {
         System.out.println(character_count);
         bufferedInputStream6.close();
 
-        //----BINARY OUTPUT PRINTSTREAM----
+        //----BINARY OUTPUT PRINTSTREAM in datei----
         PrintStream output = new PrintStream("C:\\campus02\\test\\testBinary.txt");
         String data2 = "hello File - first output";
         output.print(data2);
 
         output.flush();
         output.close();
-        //----BINARY OUTPUT FILEOUTPUTSTREAM---
+        //----BINARY OUTPUT FILEOUTPUTSTREAM in Datei---
 
         File file8 = new File("test-output.txt");
         FileOutputStream fileOutputStream = new FileOutputStream(file8);
@@ -185,7 +199,7 @@ public class AACheatSheet_File_IO {
         fileOutputStream.flush();
         fileOutputStream.close();
 
-        //---BINARY OUTPUT BUFFERED OUTPUT STREAM----
+        //---BINARY OUTPUT BUFFERED OUTPUT STREAM in datei----
 
         File file9 = new File("test.neu");
         FileOutputStream fileOutputStream9 = new FileOutputStream(file9);
@@ -210,10 +224,84 @@ public class AACheatSheet_File_IO {
         fileOutputStream99.flush();
         fileOutputStream99.close();
         System.out.println("Closed");
+
+//----OBJEKT STRING WIRD IN IN DATEI SERIALISIERT UND AUS DER DATEI IN KONSOLE GELESEN-----
+        String s = "Hello World";
+        byte[] b = {'e', 'x', 'a', 'm', 'p', 'l', 'e'};
+
+        // try {
+        File file21 = new File("object.dat");
+        // Teil 1 - Schreibe Objekt(e) in Datei
+        FileOutputStream fileOutputStream21 = new FileOutputStream(file21);
+        ObjectOutputStream objectOutputStream21 = new ObjectOutputStream(fileOutputStream21);
+
+        // write something in the file
+        objectOutputStream21.writeObject(s);
+        objectOutputStream21.writeObject(b);
+        objectOutputStream21.flush();
+        objectOutputStream21.close();
+
+        // create an ObjectInputStream for the file we created before
+        FileInputStream fileInputStream21 = new FileInputStream(file);
+        ObjectInputStream objectInputStream21 = new ObjectInputStream(fileInputStream21);
+
+        // System.out.println(objectInputStream.readObject()); -> Cast is missing!
+        // read and print an object and cast it as string
+        System.out.println("STRING: " + (String) objectInputStream21.readObject());
+
+        // read and print an object and cast it as string
+        byte[] text2 = (byte[]) objectInputStream21.readObject();
+        String s2 = new String(text2);
+        System.out.println("BYTE[]: " + s2);
+
+        //   } catch (Exception ex) {
+
+        //ex.printStackTrace();
+//    }
+
+        System.out.println("UE16 starting up...");
+        String text1 = "Hallo Welt";
+        String text4 = "Hallö mit \"Ö\"";
+        File file22 = new File("object.dat");
+        System.out.println("meine object.dat ist hier: " + file22.getAbsolutePath());
+        FileOutputStream fileoutputstream = new FileOutputStream(file22);
+        ObjectOutputStream oos = new ObjectOutputStream(fileoutputstream);
+        oos.writeObject(text1); //--- SCHREIBE STRING
+        oos.writeObject((int) 6);// SCHREIBE INT
+        // mein Objekt erstellen
+        myClass meinObjct = new myClass();
+        //mein Objt in Datei schreiben
+        oos.writeObject(meinObjct);
+        oos.close();
+        fileoutputstream.close();
+
+        // ------- Objekt einlesen -------
+        FileInputStream fi = new FileInputStream("object.dat");
+        ObjectInputStream ois = new ObjectInputStream(fi);
+        String a = (String) ois.readObject(); //LESE STRING
+        int w = (int) ois.readObject(); //LESE INT
+
+        try {
+            int z = (int) ois.readObject(); //LESE INT
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("IRGENDWAS IST SCHIEF GELAUFEN BEIM INT z EINLESEN. Fehlermeldung:"+e.getMessage());
+        } finally {
+            System.out.println("Hier ist finally.");
+            ois.close();
+        }
+        System.out.println("Erstes Objekt: '" + a + "', zweites Objekt: '" + w+ "'");
+
+    }
+    public static class myClass implements Serializable{
+        int a = 5;
+        String b = "Hallo in der Klasse";
+        byte[] c = {'e', 'x', 'a', 'm', 'p', 'l', 'e'};
+        double d = 8.7;
     }
 
 
-    }
+}
 
 
 

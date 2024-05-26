@@ -1,4 +1,4 @@
-package at.campus02.pr3.THREADS.examplePerson;
+package at.campus02.pr3.THREADS.TwoThreads10MalNameOhneLock;
 
 public class Person implements Runnable {
 

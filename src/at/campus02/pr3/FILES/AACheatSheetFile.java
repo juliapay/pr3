@@ -10,14 +10,27 @@ public class AACheatSheetFile {
         //------CREATE A FILE-----
         File file = new File("code.iml");
 
+        //---ERSTELLE EINE DATEI INKLUSIVE PFAD-----
+        //hier wird der pfad mit neuen unterordnern erstellt
+        File file11 = new File("C:\\Users\\Julia\\julia\\workingwoman\\SWENG C&M\\SWENG\\FH CAMPUS 02\\Seminare\\Programmieren 3\\UEBUNGENFUERPRUEFUNG\\test\\uebung_10\\uebung10.txt");
+        File directory = file11.getParentFile();
+        if (!directory.exists()) {
+            if (directory.mkdirs()) {
+                // perform mkdirs to try create a directory - returns true if success, returns false if no success
+                System.out.println("Directory " + directory.getAbsolutePath() + " wurde erstellt.");
+            } else {
+                System.out.println("Directory " + directory.getAbsolutePath() + " konnte nicht erstellt werden.");
+            }
+        }
+
         //------WICHTIGE FILE INFORMATIONEN AD 16----------
         readFileInformation(file);
 
-        //------ALLE FILES IN EINEM UNTERVERZEICHNIS AUFLISTEN AD 41----------
+        //------ALLE FILES IN EINEM UNTERVERZEICHNIS AUFLISTEN AD 71----------
         File dir = new File("C:\\Users\\Work\\Desktop\\PR3-21\\01 - File IO");
         listf(dir.getAbsolutePath());
 
-        //---HIER ALS REKURSIVER AUFRUF   AD 66-----
+        //---HIER ALS REKURSIVER AUFRUF   AD 76-----
         File dir1 = new File("C:\\Users\\Work\\Desktop\\PR3-21\\01 - File IO");
         System.out.println("Original Path: " + dir1.getAbsolutePath());
         listFilesAndDirectoriesWithSubFolders(dir1.getAbsolutePath());
@@ -27,7 +40,7 @@ public class AACheatSheetFile {
         printDirectoryContent(dir2);
 
         //DIRECTORIES ERSTELLEN MIT CHECK OB SCHON VORHANDEN UND OB FILE  AD 112--------
-        File dir3 = new File("C:\\test\\alt1\\da.exe");
+        File dir3 = new File("C:\\test\\alt1");
         createDirectories(dir3);
 
         //---ERSTELLEN MIT RANDOM RENAME DELETE AUSGABE IN KONSOLE AB 130-----
@@ -108,10 +121,12 @@ public class AACheatSheetFile {
             // Variable initialized
             long filesize = 0;
             // Go trough the directory; listFiles() returns an array of Files (Objects)
+            //f.listfile() gibt ein array aller filesObjects in dem directory zurück
+            //f.list()  gibt ein Array von Strings zurück
             for (File file : f.listFiles()) {
                 if (file.isFile()) {
                     System.out.println("Filename: " + file.getName() + " Size: " + file.length());
-                    filesize = filesize + file.length();
+                    filesize +=  file.length();
                 }
             }
             // print out the complete size of the directory
@@ -124,7 +139,7 @@ public class AACheatSheetFile {
         // check if file is a file or directory
         if (f.isDirectory()) {
             // perform mkdirs to try create a directory - returns true if success, returns false if no success
-            System.out.println("Directory " + f.getAbsolutePath() + " created?: " + f.mkdir());
+            System.out.println("Directory " + f.getAbsolutePath() + " is not created: " + f.mkdir());
         } else {
             System.out.println("Directory " + f.getAbsolutePath() + " created?: " + f.mkdir());
         }
@@ -134,7 +149,7 @@ public class AACheatSheetFile {
         for (int i = 0; i < 10; i++) {
             try {
                 File myObj = new File(fileList.getAbsolutePath() + "//"
-                        + ThreadLocalRandom.current().nextInt() + ".mp3");
+                        + Math.abs(ThreadLocalRandom.current().nextInt()) + ".mp3");
                 if (myObj.createNewFile()) {
                     System.out.println("CREATE: " + myObj.getAbsolutePath());
                 } else {

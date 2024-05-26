@@ -1,4 +1,4 @@
-package at.campus02.pr3.THREADS.Konto.negativ;
+package at.campus02.pr3.THREADS.Konto.negativOhneLock;
 
 public class Worker implements Runnable {
 

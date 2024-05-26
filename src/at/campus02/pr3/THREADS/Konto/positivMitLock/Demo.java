@@ -1,4 +1,4 @@
-package at.campus02.pr3.THREADS.Konto.positiv;
+package at.campus02.pr3.THREADS.Konto.positivMitLock;
 
 public class Demo {
 
