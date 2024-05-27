@@ -1,5 +1,9 @@
 package at.campus02.pr3.FILEIO;
 
+import at.campus02.pr3.FILEIO.abschlussbeispiel.Address;
+import at.campus02.pr3.FILEIO.abschlussbeispiel.AddressExportException;
+import at.campus02.pr3.FILEIO.abschlussbeispiel.AddressExportFileAlreadyExistsException;
+
 import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -224,7 +228,39 @@ public class AACheatSheet_File_IO {
         fileOutputStream99.flush();
         fileOutputStream99.close();
         System.out.println("Closed");
+//----OBJEKTE EINER lISTE IN DATEI SCHREIBEN SIEHE ADDRESSMANAGER ABSCHLUSSBEISPIEL------
+ /*       public void exportToCsv(String path, String separator) throws AddressExportException, AddressExportFileAlreadyExistsException
+        {
 
+            File f = new File(path);
+            System.out.println("File Path: " + f.getAbsolutePath());
+            if (f.exists()) { // existiert das file? -> Exception
+                throw new AddressExportFileAlreadyExistsException("lol, file already esists");
+            }
+            //damit es ausserhalb des tryblocks geschlossen und geflushed wird
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+
+            try { // neues File öffnen
+                fw = new FileWriter(f);
+                bw = new BufferedWriter(fw);
+                System.out.println("exportToCsv: baue String zum exportieren zusammen...");
+                for (Address one_address : addresses) {
+                    String one_line = one_address.getFirstname() + separator +
+                            one_address.getLastname() + separator +
+                            one_address.getMobilNumber() + separator +
+                            one_address.getEmail();
+                    System.out.println("Eintrag: " + one_line); // auf die Konsole schreiben
+                    bw.write(one_line);
+                    bw.newLine();
+                    //in die Datei schreiben
+                }
+                bw.flush();
+                bw.close();
+            } catch (IOException e) {
+                throw new AddressExportException(e.getMessage());
+            }
+        }*/
 //----OBJEKT STRING WIRD IN IN DATEI SERIALISIERT UND AUS DER DATEI IN KONSOLE GELESEN-----
         String s = "Hello World";
         byte[] b = {'e', 'x', 'a', 'm', 'p', 'l', 'e'};
