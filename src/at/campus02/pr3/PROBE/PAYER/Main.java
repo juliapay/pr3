@@ -30,7 +30,7 @@ public class Main {
             String userInput = userInputReader.readLine();
 
             // Hauptschleife zum Senden und Empfangen von Nachrichten
-            while (!(userInput.equalsIgnoreCase("ende"))) {
+            while (true) {
 
                 // Prüfe, ob eine Nachricht vom Server empfangen wurde
                 if (socketReader.ready()) {
