@@ -20,12 +20,12 @@ public class AACheatSheet_File_IO {
         //----TEXTDATEI MIT BUFFEREDREADER EINLESEN AUSGABE IN KONSOLE----
         // öffnet die Datei test.txt
         File file = new File("umlaute.txt");
-        FileReader fileReader = new FileReader(file);
+        FileReader fileReader = new FileReader(file.toString());
         BufferedReader bufferedReader1 = new BufferedReader(fileReader);
 
         //----FILE MIT BUFFEREDREADER EINLESEN AUSGABE IN KONSOLE----
         //----KURZFORMEN-------
-        BufferedReader br2 = new BufferedReader(new FileReader(new File("testout.txt")));
+        BufferedReader br2 = new BufferedReader(new FileReader(new File("testout.txt").toString()));
         BufferedReader br3 = new BufferedReader(new FileReader("testout.txt"));
 
         String line;
@@ -151,7 +151,7 @@ public class AACheatSheet_File_IO {
         //----BINARYINPUT MIT FILEINPUTSTREAM BUFFEREDINPUTSTREAM Ausgabe in Konsole----
         File file6 = new File("test.txt");
 
-        FileInputStream fileInputStream = new FileInputStream(file6);
+        FileInputStream fileInputStream = new FileInputStream(file6.toString());
 
         BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
 
@@ -168,7 +168,7 @@ public class AACheatSheet_File_IO {
         //---ZAEHLEN ALLER ZEICHEN UND AUSGABE DER GESAMTZAHL---
 
         File file7 = new File("test-output.txt");
-        FileInputStream fileInputStream6 = new FileInputStream(file7);
+        FileInputStream fileInputStream6 = new FileInputStream(file7.toString());
         BufferedInputStream bufferedInputStream6 = new BufferedInputStream(fileInputStream6);
 
         int byteRead1;
@@ -192,7 +192,7 @@ public class AACheatSheet_File_IO {
         //----BINARY OUTPUT FILEOUTPUTSTREAM in Datei---
 
         File file8 = new File("test-output.txt");
-        FileOutputStream fileOutputStream = new FileOutputStream(file8);
+        FileOutputStream fileOutputStream = new FileOutputStream(file8.toString());
 
 
         String outputText = "Hello File - first output";
@@ -206,7 +206,7 @@ public class AACheatSheet_File_IO {
         //---BINARY OUTPUT BUFFERED OUTPUT STREAM in datei----
 
         File file9 = new File("test.neu");
-        FileOutputStream fileOutputStream9 = new FileOutputStream(file9);
+        FileOutputStream fileOutputStream9 = new FileOutputStream(file9.toString());
         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream9);
 
         bufferedOutputStream.write("Hello World".getBytes(StandardCharsets.UTF_8));
@@ -218,7 +218,7 @@ public class AACheatSheet_File_IO {
         //---FILE OUTPUT STREAM EINLESEN VON DER KONSOLE SCHREIBE IN DATEI----
 
         File file99 = new File("test-output.txt");
-        FileOutputStream fileOutputStream99 = new FileOutputStream(file99);
+        FileOutputStream fileOutputStream99 = new FileOutputStream(file99.toString());
 
         char c;
         while ((c = (char) System.in.read()) != 'x') {
@@ -268,7 +268,7 @@ public class AACheatSheet_File_IO {
         // try {
         File file21 = new File("object.dat");
         // Teil 1 - Schreibe Objekt(e) in Datei
-        FileOutputStream fileOutputStream21 = new FileOutputStream(file21);
+        FileOutputStream fileOutputStream21 = new FileOutputStream(file21.toString());
         ObjectOutputStream objectOutputStream21 = new ObjectOutputStream(fileOutputStream21);
 
         // write something in the file
@@ -278,7 +278,7 @@ public class AACheatSheet_File_IO {
         objectOutputStream21.close();
 
         // create an ObjectInputStream for the file we created before
-        FileInputStream fileInputStream21 = new FileInputStream(file);
+        FileInputStream fileInputStream21 = new FileInputStream(file.toString());
         ObjectInputStream objectInputStream21 = new ObjectInputStream(fileInputStream21);
 
         // System.out.println(objectInputStream.readObject()); -> Cast is missing!
@@ -299,8 +299,8 @@ public class AACheatSheet_File_IO {
         String text1 = "Hallo Welt";
         String text4 = "Hallö mit \"Ö\"";
         File file22 = new File("object.dat");
-        System.out.println("meine object.dat ist hier: " + file22.getAbsolutePath());
-        FileOutputStream fileoutputstream = new FileOutputStream(file22);
+      //  System.out.println("meine object.dat ist hier: " + file22.getAbsolutePath());
+        FileOutputStream fileoutputstream = new FileOutputStream(file22.toString());
         ObjectOutputStream oos = new ObjectOutputStream(fileoutputstream);
         oos.writeObject(text1); //--- SCHREIBE STRING
         oos.writeObject((int) 6);// SCHREIBE INT

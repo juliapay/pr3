@@ -22,7 +22,7 @@ public class StringInObjektDateiVonDerDateiWiederInKonsole {
         try {
             File file = new File("object.dat");
             // Teil 1 - Schreibe Objekt(e) in Datei
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            FileOutputStream fileOutputStream = new FileOutputStream(file.toString());
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
             // write something in the file
@@ -32,7 +32,7 @@ public class StringInObjektDateiVonDerDateiWiederInKonsole {
             objectOutputStream.close();
 
             // create an ObjectInputStream for the file we created before
-            FileInputStream fileInputStream = new FileInputStream(file);
+            FileInputStream fileInputStream = new FileInputStream(file.toString());
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
             // System.out.println(objectInputStream.readObject()); -> Cast is missing!
