@@ -4,7 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class AACheatSheetFile {
+public class
+AACheatSheetFile {
     public static void main(String[] args) {
 
         //------CREATE A FILE-----

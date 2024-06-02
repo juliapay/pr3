@@ -1,4 +1,4 @@
-package at.campus02.pr3.PROBE.PAYER.Loesung;
+package at.campus02.pr3.PROBE.Pruefung.Loesung;
 
 import java.io.*;
 import java.net.Socket;

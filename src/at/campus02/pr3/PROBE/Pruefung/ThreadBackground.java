@@ -1,4 +1,4 @@
-package at.campus02.pr3.PROBE.PAYER;
+package at.campus02.pr3.PROBE.Pruefung;
 
 import java.io.File;
 
