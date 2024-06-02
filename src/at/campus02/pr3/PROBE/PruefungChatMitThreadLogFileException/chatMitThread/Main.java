@@ -1,4 +1,4 @@
-package at.campus02.pr3.PROBE.PruefungServerClientMultiThread.probePruefung.chatMitThread;
+package at.campus02.pr3.PROBE.PruefungChatMitThreadLogFileException.chatMitThread;
 
 import java.io.*;
 import java.net.Socket;

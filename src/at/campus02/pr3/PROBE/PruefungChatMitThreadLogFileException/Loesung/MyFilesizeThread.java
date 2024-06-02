@@ -1,4 +1,4 @@
-package at.campus02.pr3.PROBE.Pruefung.Loesung;
+package at.campus02.pr3.PROBE.PruefungChatMitThreadLogFileException.Loesung;
 
 import java.io.File;
 
