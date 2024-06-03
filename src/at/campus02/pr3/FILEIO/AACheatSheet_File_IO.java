@@ -189,7 +189,21 @@ public class AACheatSheet_File_IO {
 
         output.flush();
         output.close();
-        //----BINARY OUTPUT FILEOUTPUTSTREAM in Datei---
+
+        //----BINARY OUTPUT FILEOUTPUTSTREAM ZAHLEN in Datei---
+        String fileName = "hallo.txt";
+
+        // Binärwert, der geschrieben werden soll
+        byte value = 0x2B;//43 in Dezimal
+        // Datei schreiben
+        try (FileOutputStream fos = new FileOutputStream(fileName)) {
+            for ( i = 0; i < 20; i++) {
+                fos.write(value);
+            }
+            System.out.println("Datei erfolgreich geschrieben.");
+        } catch (IOException e) {
+            System.err.println("Fehler beim Schreiben der Datei: " + e.getMessage());
+        }
 
         File file8 = new File("test-output.txt");
         FileOutputStream fileOutputStream = new FileOutputStream(file8.toString());

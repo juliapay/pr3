@@ -3,7 +3,7 @@ package at.campus02.pr3.FILEIO.BinaryOutput;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class BinaryOutputFileOutputStream {
+public class BinaryOutputFileOutputStreamHexaCodeACIICode {
     public static void main(String[] args) throws IOException {
        // File file = new File("C:\\campus02\\test\\testBinary2.txt");
 
@@ -15,7 +15,6 @@ public class BinaryOutputFileOutputStream {
 
         // Konvertiert die Zeichenkette in ein Char-Array
         for (char c : data.toCharArray()) {
-
             // Schreibt jedes Zeichen einzeln in die Datei
             fileOutputStream.write(c);
         }

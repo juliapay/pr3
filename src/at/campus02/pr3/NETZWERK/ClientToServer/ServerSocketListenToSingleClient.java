@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class ListenToSingleClient {
+public class ServerSocketListenToSingleClient {
     // start via CommandLine (cmd): telnet localhost 9090
     public static void main(String[] args) throws IOException {
         System.out.println("Warte auf eingehende Verbindungen - Verbinde mit telnet localhost 9090");
