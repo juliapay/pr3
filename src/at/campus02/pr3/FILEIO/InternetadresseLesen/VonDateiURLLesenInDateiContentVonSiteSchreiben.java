@@ -1,4 +1,4 @@
-package at.campus02.pr3.NETZWERK.InternetadresseLesen;
+package at.campus02.pr3.FILEIO.InternetadresseLesen;
 
 import java.io.*;
 import java.net.URL;
