@@ -12,31 +12,28 @@ public class BinaryInputLiestDateiEinAusgabeInKonsole {
         FileInputStream fileInputStream = new FileInputStream(filePath);
         // Buffert die Eingabe, um die Leistung zu verbessern
         BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
-        // Variable zum Speichern des gelesenen Bytes
+        // Liest Binär ein und gibt aus in Konsole
         int byteRead;
         int i = 0;
-        int j=0;
+        int j = 0;
         // Solange es noch Bytes gibt, die gelesen werden können
         //ausgegeben wird 1 Byte auf einmal = 8 Bit = 1 char
         // -1 ist end of file
         while ((byteRead = bufferedInputStream.read()) != -1) {
             // Gib das Byte auf der Konsole aus
-            System.out.print(i+": ");
+            System.out.print(i + ": ");
             System.out.print(byteRead);
-            System.out.println("\t"+"'"+(char) byteRead+"'");
-            if(Character.isWhitespace((char) byteRead)){
+            System.out.println("\t" + "'" + (char) byteRead + "'");
+            //WHITESPACE
+            if (Character.isWhitespace((char) byteRead)) {
                 j++;
-            }
-          //  if(byteRead != ' ' ){
-         //       i++;
-            //  }
-            else{
+            } else {
                 i++;
             }
         }
-        System.out.println(i+" Zeichen wurden gelesen");
+        System.out.println(i + " Zeichen wurden gelesen");
 
-        System.out.println(j+" Leerzeichen oder Tabulatoren oder Zeilenumbrueche wurden eingelesen");
+        System.out.println(j + " Leerzeichen oder Tabulatoren oder Zeilenumbrueche wurden eingelesen");
         // Schließt den Buffered-InputStream, um die Ressourcen freizugeben
         bufferedInputStream.close();
     }

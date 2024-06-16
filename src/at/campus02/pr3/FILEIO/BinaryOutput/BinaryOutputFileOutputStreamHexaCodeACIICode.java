@@ -9,7 +9,7 @@ public class BinaryOutputFileOutputStreamHexaCodeACIICode {
 
         // Schreibt in die Datei "C:\campus02\test\testBinary2.txt"
         FileOutputStream fileOutputStream = new FileOutputStream("C:\\campus02\\test\\testBinary2.txt");
-
+//schreibt in die Datei mit Binär zahlen
         // Definiert eine Zeichenkette mit Daten
         String data = "hello File - second output";
 

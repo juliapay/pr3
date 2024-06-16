@@ -12,6 +12,7 @@ public class Worker implements Runnable {
             synchronized (lock) {
 
                 counter++;
+
                 System.out.println(Thread.currentThread().getName()+" counts " + (counter));
 
             }

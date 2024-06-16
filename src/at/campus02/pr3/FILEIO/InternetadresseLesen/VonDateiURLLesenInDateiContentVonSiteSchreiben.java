@@ -20,11 +20,11 @@ public class VonDateiURLLesenInDateiContentVonSiteSchreiben {
         BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));//liest den html text der seite, die im url.txt steht
 
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputfile));
-
+//schreiben aus dem netz in die datei
         String inputfile;//variable für den html content der seite
         while ((inputfile = in.readLine()) != null) {//schleife solange bis kein content mehr im html file ist
             bufferedWriter.write((inputfile));//schreibt den content in das vorgegeben file
-            bufferedWriter.newLine();
+            bufferedWriter.newLine();//Zeilenumbruch
         }
         bufferedWriter.flush();
         in.close();

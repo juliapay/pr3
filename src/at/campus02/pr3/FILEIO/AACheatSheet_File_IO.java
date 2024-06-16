@@ -197,7 +197,7 @@ public class AACheatSheet_File_IO {
         byte value = 0x2B;//43 in Dezimal
         // Datei schreiben
         try (FileOutputStream fos = new FileOutputStream(fileName)) {
-            for ( i = 0; i < 20; i++) {
+            for (i = 0; i < 20; i++) {
                 fos.write(value);
             }
             System.out.println("Datei erfolgreich geschrieben.");
@@ -213,9 +213,23 @@ public class AACheatSheet_File_IO {
         for (char c : outputText.toCharArray()) {
             fileOutputStream.write(c);
         }
-
+//--------------------------------------------------------------------------
         fileOutputStream.flush();
         fileOutputStream.close();
+
+        File file111 = new File("C:\\Users\\Julia\\julia\\workingwoman\\SWENG C&M\\SWENG\\FH CAMPUS 02\\Seminare\\Programmieren 3\\UEBUNGENFUERPRUEFUNG\\uebung15.txt");
+        FileOutputStream fos = new FileOutputStream(file111);
+        char c;
+        while ((c = (char) System.in.read()) != 'x') {
+            fos.write(c);
+
+            if (c == 'x') {
+                System.out.println("you wrote a x");
+                fos.flush();
+                fos.close();
+                System.out.println("closed");
+            }
+        }
 
         //---BINARY OUTPUT BUFFERED OUTPUT STREAM in datei----
 
@@ -234,10 +248,10 @@ public class AACheatSheet_File_IO {
         File file99 = new File("test-output.txt");
         FileOutputStream fileOutputStream99 = new FileOutputStream(file99.toString());
 
-        char c;
-        while ((c = (char) System.in.read()) != 'x') {
-            fileOutputStream99.write(c);
-            System.out.println(c);
+        char c1;
+        while ((c1 = (char) System.in.read()) != 'x') {
+            fileOutputStream99.write(c1);
+            System.out.println(c1);
         }
         fileOutputStream99.flush();
         fileOutputStream99.close();
@@ -300,45 +314,59 @@ public class AACheatSheet_File_IO {
         System.out.println("STRING: " + (String) objectInputStream21.readObject());
 
         // read and print an object and cast it as string
+        //funktioniert mit string nicht
+        //NO STRING
         byte[] text2 = (byte[]) objectInputStream21.readObject();
         String s2 = new String(text2);
         System.out.println("BYTE[]: " + s2);
+        String object = "Hallo World";
+//--------------------------------------------------------------------------------
+        // Serialisieren in ein byte[]-Array
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
+        oos.writeObject(object);
+        oos.flush();
+        byte[] serializedObject = baos.toByteArray();
+        oos.close();
 
-        //   } catch (Exception ex) {
+        // Deserialisieren aus einem byte[]-Array
+        ByteArrayInputStream bais = new ByteArrayInputStream(serializedObject);
+        ObjectInputStream ois = new ObjectInputStream(bais);
+        String deserializedObject = (String) ois.readObject();
+        ois.close();
 
-        //ex.printStackTrace();
-//    }
+        System.out.println("Deserialized String: " + deserializedObject);
+    //------------------------------------------------------------------------------
 
-        System.out.println("UE16 starting up...");
         String text1 = "Hallo Welt";
         String text4 = "Hallö mit \"Ö\"";
         File file22 = new File("object.dat");
       //  System.out.println("meine object.dat ist hier: " + file22.getAbsolutePath());
         FileOutputStream fileoutputstream = new FileOutputStream(file22.toString());
-        ObjectOutputStream oos = new ObjectOutputStream(fileoutputstream);
+        ObjectOutputStream oos1 = new ObjectOutputStream(fileoutputstream);
         oos.writeObject(text1); //--- SCHREIBE STRING
         oos.writeObject((int) 6);// SCHREIBE INT
         // mein Objekt erstellen
         myClass meinObjct = new myClass();
         //mein Objt in Datei schreiben
-        oos.writeObject(meinObjct);
-        oos.close();
+        oos1.writeObject(meinObjct);
+        oos1.close();
         fileoutputstream.close();
 
         // ------- Objekt einlesen -------
         FileInputStream fi = new FileInputStream("object.dat");
-        ObjectInputStream ois = new ObjectInputStream(fi);
-        String a = (String) ois.readObject(); //LESE STRING
-        int w = (int) ois.readObject(); //LESE INT
+        ObjectInputStream ois1 = new ObjectInputStream(fi);
+        String a = (String) ois1.readObject(); //LESE STRING
+        int w = (int) ois1.readObject(); //LESE INT
 
         try {
-            int z = (int) ois.readObject(); //LESE INT
+            int z = (int) ois1.readObject(); //LESE INT
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("IRGENDWAS IST SCHIEF GELAUFEN BEIM INT z EINLESEN. Fehlermeldung:"+e.getMessage());
         } finally {
             System.out.println("Hier ist finally.");
-            ois.close();
+            ois1.close();
         }
         System.out.println("Erstes Objekt: '" + a + "', zweites Objekt: '" + w+ "'");
 

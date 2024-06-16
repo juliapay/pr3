@@ -13,7 +13,7 @@ public class MyFilesizeThread implements Runnable {
     public void run() {
         while (!Thread.interrupted()) {
             //File localLogFile = new File("logfile.txt");
-            System.out.println("FILSIZE: " +
+            System.out.println("FILESIZE: " +
                     //localLogFile.length() + "( i am thread)" +
                     logfileFromMain.length() + " (Name:  " +
                     Thread.currentThread().getName() + ")");
