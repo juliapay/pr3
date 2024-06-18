@@ -1,4 +1,4 @@
-package at.campus02.pr3.NETZWERK.InputOutputURL;
+package at.campus02.pr3.NETZWERK.InputURLOutputConsole;
 
 import java.io.*;
 import java.net.HttpURLConnection;

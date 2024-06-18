@@ -11,9 +11,6 @@ public class TimePrintWorker extends Worker implements Runnable {
     protected void work() {
         printStarted();
         while (shouldRun) {
-            if (shouldRun = false) {
-                break;
-            }
             Date d = new Date();
             System.out.println(d.toString());
             try {
@@ -21,7 +18,6 @@ public class TimePrintWorker extends Worker implements Runnable {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-
         }
         printStopped();
     }
@@ -29,8 +25,5 @@ public class TimePrintWorker extends Worker implements Runnable {
     @Override
     public void run() {
         work();
-
     }
-
-
 }

@@ -21,6 +21,8 @@ public class BinaryInputLiestDateiEinAusgabeInKonsole {
         // -1 ist end of file
         while ((byteRead = bufferedInputStream.read()) != -1) {
             // Gib das Byte auf der Konsole aus
+           // char[] ch = Character.toChars(byteRead);
+           // System.out.println(ch);
             System.out.print(i + ": ");
             System.out.print(byteRead);
             System.out.println("\t" + "'" + (char) byteRead + "'");

@@ -41,10 +41,8 @@ public class FileReadWorker extends Worker implements Runnable {
         }
         printStopped();
     }
-
     @Override
     public void run() {
         work();
-
     }
 }

@@ -1,4 +1,4 @@
-package at.campus02.pr3.THREADS.RunnableCounter;
+package at.campus02.pr3.THREADS.RunnableCounterSynchronized;
 
 public class Main {
     public static void main(String[] args) {
